@@ -1,4 +1,4 @@
-"""Django_Calender URL Configuration
+"""calender_proj URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,13 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import Calender.views as views
-from django.conf.urls import url
+from calender_app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('^calendar', views.calendar, name='calendar'),
-    url('^add_event$', views.add_event, name='add_event'),
-    url('^update$', views.update, name='update'),
-    url('^remove', views.remove, name='remove'),
+    path('calendar', calendar, name='calendar'),
+    path('add_event', add_event, name='add_event'),
+    path('update', update, name='update'),
+    path('remove', remove, name='remove'),
 ]
